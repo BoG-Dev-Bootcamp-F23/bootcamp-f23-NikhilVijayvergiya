@@ -1,0 +1,39 @@
+
+.topbar {
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    font-family: sans-serif;
+    justify-content: space-around;
+    list-style-type: none;
+
+}
+
+li {
+    margin-right: 20%;
+    display: inline-block;
+
+
+}
+
+
+.movieSearch {
+    display: flex;
+}
+
+input {
+    text-align: center;
+    border-radius: 15px;
+    width: 400px;
+    height: 15px;
+    position: sticky;
+
+}
