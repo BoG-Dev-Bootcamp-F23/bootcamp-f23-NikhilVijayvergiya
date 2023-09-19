@@ -54,6 +54,30 @@ ol {
     list-style-type: none;
 
 }
+.movie-columns {
+    display: flex;
+    flex-direction: row;
+}
+
+.movie-columns img {
+    align-items: center;
+    margin-left: 10%;
+}
+
+.movie-columns h1 {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.movie-columns p {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10%;
+    border: black;
+}
+
+
 
 li {
     margin-right: 20%;
