@@ -92,19 +92,25 @@ function findLongestWord(string) {
  */
 function combineObjects(object1, object2) {
 
-  let arr = {};
-  for (let key in object1) {
-    arr[key] = object1[key];
-  }
+  // let arr = {};
+  // for (let key in object1) {
+  //   arr[key] = object1[key];
+  // }
 
-  for (let key in object2) {
-    arr[key] = object2[key];
-  }
+  // for (let key in object2) {
+  //   arr[key] = object2[key];
+  // }
 
-  return arr;
+  // return arr;
+
+  const combined = {
+    ... object1,
+    ... object2
+  };
+  return combined;
   
 
-  console.log(arr);
+  // console.log(arr);
   // TODO
 }
 
