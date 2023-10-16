@@ -1,0 +1,70 @@
+.App {
+  text-align: center;
+}
+
+
+.buttonList {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.MainInfo {
+  display: flex;
+  flex-direction: row;
+}
+
+.stationList {
+  list-style-type: none !important;
+}
+.sideBar {
+  background-color: darkgray;
+}
+
+.sideBar li {
+border-bottom: 1px solid;
+padding-bottom: 5px;
+margin-bottom: 10px;
+}
+
+.horizontalMain {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-bottom: 1px solid;
+  align-items: center;
+  margin: 10px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.trainInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+#lineColor {
+ border-radius: 4px;
+ color: white;
+ margin-right: 10px;
+ padding-left: 10px;
+ padding-right: 10px;
+ padding-top: 5px;
+ padding-bottom: 3px;
+ font-size: 13x;
+ text-align: center;
+
+}
+
+#timeRemaining {
+}
+
+#colorTime {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+
+
