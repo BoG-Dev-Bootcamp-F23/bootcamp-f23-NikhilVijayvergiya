@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 export default function Train(props) {
-    const  {DESTINATION, LINE,  DELAY, WAITING_TIME } = props;
+    const  {DESTINATION, LINE,  DELAY, WAITING_TIME, station } = props;
     const [onTime, setOnTime] = useState("On Time");
     const [soon, setSoon] = useState( 'Green' );
     
@@ -22,7 +22,7 @@ export default function Train(props) {
         <div class = "horizontalMain">
             <img></img>
             <div class = "trainInfo">
-                <p id = "trainStops"> CHAMBLEE ---- {DESTINATION} </p>
+                <p id = "trainStops"> {station} ---- {DESTINATION} </p>
                 <div id = "colorTime">
                     <p style = {{backgroundColor: LINE}} id = "lineColor"> {LINE} </p>
                     <p id = "isLate" style = {{ color: soon}}> {onTime} </p>

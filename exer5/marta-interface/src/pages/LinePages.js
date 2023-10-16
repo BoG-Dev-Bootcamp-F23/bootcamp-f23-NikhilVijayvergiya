@@ -7,7 +7,12 @@ import NavBar from '../components/NavBar';
 import { useState } from "react";
 
 export default function LinesPage() {
-    const[currColor, setColor] = useState("Gold");  
+    const[currColor, setColor] = useState("Gold");
+    const [currStation, setStation] = useState ("Chamblee");
+    
+    
+
+
     return (
     <div>
       <div class = "trainColorHeading">
@@ -17,15 +22,17 @@ export default function LinesPage() {
       <div class = "sideBar">
         <p> Select Starting Station </p>
         <ul class = "stationList">
-          <li> All Stations </li>
-          <li> Chamblee </li>
-          <li> Brookhaven </li>
-          <li> North Avenue </li>
-          <li> Airport </li>
+          <li> <button onClick={() =>setStation('All Stations')}> All Stations </button> </li>
+          <li> <button onClick={() =>setStation('Chamblee')}> Chamblee </button> </li>
+          <li> <button onClick={() =>setStation('Brookhaven')}> Brookhaven </button> </li>
+          <li> <button onClick={() =>setStation('North Avenue')}> North Avenue </button> </li>
+          <li> <button onClick={() =>setStation('Airport')}> Airport </button></li>
         </ul>
       </div>
+      <div class = "rightSide">
       <NavBar class = "navBar" color={currColor} data={stationData} />
-      <TrainList color={currColor} data={trainData} />
+      <TrainList {...currColor} station = {currStation} />
+      </div>
       </div>
     </div>
   );

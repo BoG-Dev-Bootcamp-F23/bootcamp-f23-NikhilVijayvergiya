@@ -55,6 +55,10 @@ margin-bottom: 10px;
  text-align: center;
 
 }
+.rightSide {
+  display: flex;
+  flex-direction: column;
+}
 
 #timeRemaining {
 }
