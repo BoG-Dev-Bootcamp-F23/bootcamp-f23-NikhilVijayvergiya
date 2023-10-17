@@ -31,7 +31,7 @@ export default function Train(props) {
                 <div class = "startdest">
                     <p id = "trainStops"> {station}  </p>
                     <img src = {arrow} alt = 'arrow' class = "arrow"/>
-                    <p id = "destination"> {DESTINATION} </p>
+                    <p id = "destination"> {DESTINATION.toLowerCase()} </p>
                 </div>
                 <div id = "colorTime">
                     <p style = {{backgroundColor: LINE}} id = "lineColor"> {LINE} </p>

@@ -26,12 +26,12 @@ export default function LinesPage() {
             <li> <button onClick={() => setStation("Chamblee")}> Chamblee </button> </li>
             <li> <button onClick={() => setStation("Brookhaven")}> Brookhaven </button> </li>
             <li> <button onClick={() => setStation("North Avenue")}> North Avenue </button> </li>
-            <li> <button onClick={() => setStation("Airport")}> Airport </button></li>
+            <li> <button onClick={() => setStation("Airport")}>Airport</button></li>
           </ul>
         </div>
         <div class = "rightSide">
-        <NavBar class = "navBar" color={currColor} data={stationData} />
-        <TrainList id = "LIST" color = {currColor} station = {currStation} />
+          <NavBar class = "navBar" color={currColor} data={stationData} />
+          <TrainList id = "LIST" color = {currColor} station = {currStation} />
         </div>
       </div>
     </div>

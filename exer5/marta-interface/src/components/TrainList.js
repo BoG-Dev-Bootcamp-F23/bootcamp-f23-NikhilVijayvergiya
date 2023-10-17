@@ -13,7 +13,7 @@ export default function TrainList(props) {
     
 
     return (
-        <div>
+        <div id = "listTrains">
             {filteredArrivals.map((arrival, index) => (
                 <Train {...arrival} station = {currStation}  />
             ))}
