@@ -2,11 +2,23 @@
   text-align: center;
 }
 
-
 .buttonList {
   list-style: none;
   display: flex;
   flex-direction: row;
+}
+
+.buttonList button {
+  border-radius: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-inline: 10px;
+  background-color: white;
+}
+
+.buttonList button:hover {
+  background-color: rgb(44, 44, 44);
+  color: white;
 }
 
 .MainInfo {
@@ -15,16 +27,56 @@
 }
 
 .stationList {
-  list-style-type: none !important;
-}
-.sideBar {
-  background-color: darkgray;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  list-style: none;
+  margin-left: -40px;
 }
 
+.arrow {
+  width: 30px;
+  height: 30px;
+}
+
+#trainStops {
+  padding-right: 5px;
+}
+.sideBar {
+  background-color: rgb(37, 37, 37);
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.startdest {
+display: flex !important;
+flex-direction: row;
+margin-bottom: -20px;
+}
+/* .destination {
+  margin
+} */
+
 .sideBar li {
-border-bottom: 1px solid;
-padding-bottom: 5px;
-margin-bottom: 10px;
+  border-bottom: 1px solid;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  padding-right: 50px;
+  padding-left: 10px;
+  
+}
+
+.sideBar li button {
+  font-family: sans-serif;
+  font-size: large;
+  border: none;
+  text-align: left;
+  background-color: inherit;
+  padding-right: 10px;
+  color: white;
+  padding-bottom: 10px;
 }
 
 .horizontalMain {
@@ -33,28 +85,35 @@ margin-bottom: 10px;
   background-color: white;
   border-bottom: 1px solid;
   align-items: center;
-  margin: 10px;
+  justify-content: space-between;
   font-family: sans-serif;
   font-weight: bold;
+  margin-left: 10px;
+}
+
+.stationList button:hover {
+  background-color: blue;
 }
 
 .trainInfo {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  font-family: "Lucida Console", "Courier New", monospace;
 }
 
 #lineColor {
- border-radius: 4px;
- color: white;
- margin-right: 10px;
- padding-left: 10px;
- padding-right: 10px;
- padding-top: 5px;
- padding-bottom: 3px;
- font-size: 13x;
- text-align: center;
-
+  border-radius: 4px;
+  color: white;
+  margin-right: 10px;
+  padding-left: 14px;
+  padding-right: 14px;
+  font-size: 14px;
+  padding-top: 4px;
+  align-items: center;
+  height: 18px;
 }
+
 .rightSide {
   display: flex;
   flex-direction: column;
@@ -63,12 +122,21 @@ margin-bottom: 10px;
 #timeRemaining {
 }
 
+/* #trainStops {
+} */
+
 #colorTime {
   display: flex;
   flex-direction: row;
 }
 
+.arrow {
+  padding-top: 10px ;
+  margin-right: 10px; /* Adjust the margin to control the spacing between text and the arrow */
+}
 
-
-
-
+#number {
+  background-color:lightgray;
+  padding-inline: 10px;
+  border-radius: 8px;
+}

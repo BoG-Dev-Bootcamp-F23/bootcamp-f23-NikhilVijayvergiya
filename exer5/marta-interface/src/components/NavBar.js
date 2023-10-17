@@ -1,6 +1,8 @@
 import React from "react";
+import Train from "./Train";
 
 export default function NavBar(props) {
+    const { color } = props;
 
     return (
         <li class = "buttonList">
