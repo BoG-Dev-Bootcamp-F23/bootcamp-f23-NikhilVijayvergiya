@@ -4,7 +4,6 @@ import trainData from '../server/trainData';
 import TrainList from '../components/TrainList';
 import NavBar from '../components/NavBar';
 import { useState } from "react";
-import LineSelector from '../components/LineSelector';
 
 export default function LinesPage() {
     const[currColor, setColor] = useState("Gold");
@@ -15,8 +14,7 @@ export default function LinesPage() {
 
     return (
     <div id = "everything">
-      <LineSelector></LineSelector>
-          <div class = "trainColorHeading">
+      <div class = "trainColorHeading">
           {/* <img src ={martaLogo} alt = "Marta logo"/> */}
           <h1 class = "heading" style = {{fontWeight: 'bold'}}> {currColor} </h1>
       </div>
