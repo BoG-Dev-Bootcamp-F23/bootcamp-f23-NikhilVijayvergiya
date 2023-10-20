@@ -1,13 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import arrow from '../arrow.png';
-import currStation from "../pages/LinePages";
 import marta from "../Marta.png";
 
 
 export default function Train(props) {
-    const  {DESTINATION, LINE,  DELAY, WAITING_TIME } = props;
-    const station =  'Chamblee';
+    const  {DESTINATION, LINE,  DELAY, WAITING_TIME, station } = props;
     const [onTime, setOnTime] = useState("On Time");
     const [soon, setSoon] = useState( 'Green' );
     
@@ -21,6 +19,10 @@ export default function Train(props) {
         }
     };
 
+    useEffect(() => {
+     checkOnTime()
+    }, [])
+
  
 
     return (
@@ -29,7 +31,7 @@ export default function Train(props) {
             <img id = "martaIMG" src = {marta} alt = "marta"/>
             <div class = "trainInfo">
                 <div class = "startdest">
-                    <p id = "trainStops"> {station}  </p>
+                    <p id = "trainStops"> {station.toLowerCase()}  </p>
                     <img src = {arrow} alt = 'arrow' class = "arrow"/>
                     <p id = "destination"> {DESTINATION.toLowerCase()} </p>
                 </div>

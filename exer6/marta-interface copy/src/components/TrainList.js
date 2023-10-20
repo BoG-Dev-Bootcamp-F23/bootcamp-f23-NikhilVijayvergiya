@@ -1,20 +1,18 @@
 import Train from './Train';
 
 export default function TrainList(props) {
-    const { color, arrivalData } = props;
+    const { currColor, arrivalData, currStation } = props;
+    console.log(currStation);
 
-
-    const filteredArrivals = arrivals.RailArrivals.filter( 
-        (arrival) => 
-            arrival.LINE === 'GOLD'
-    );
-
-    
+    const filteredArrivals = arrivalData?.filter((arrival) => {
+        return arrival.LINE  === currColor;
+    });
 
     return (
+        
         <div id = "listTrains">
-            {filteredArrivals.map((arrival, index) => (
-                <Train {...arrival} station = {currStation}  />
+            {filteredArrivals?.map((arrival) => (
+                <Train {...arrival} station = {currStation} />
             ))}
         </div>
     );

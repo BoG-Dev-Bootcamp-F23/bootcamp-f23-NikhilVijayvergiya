@@ -4,14 +4,17 @@ import React from "react";
 
 export default function SideBar(props) {
 
-    const stations = props;
+    const { stationData } = props;
+
     
     return (
         <div class = "sideBar">
             <p style = {{ color: 'white', marginLeft: 10}}> Select Starting Station </p>
-            {stations?.map((station) => {
-                return <div> {station} </div>;
+            <div class = "stationList">
+            {stationData?.map((station) => {
+                return <div> <button onClick = {() => {props.setCurrStation(station.toUpperCase())}}> {station} </button></div>;
             })}
+            </div>
             {/* <ul class = "stationList">
             <li> <button onClick={() => setStation("All Stations")}> All Stations </button> </li>
             <li> <button onClick={() => setStation("Chamblee")}> Chamblee </button> </li>

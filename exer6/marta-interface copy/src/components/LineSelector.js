@@ -5,16 +5,16 @@ export default function LineSelector(props) {
     return (
         <div class = "colorLine">
             <button onClick={() => {
-                props.setColor("Red");
+                props.setColor("RED");
             }}> Red </button>
             <button onClick={() => {
-                props.setColor("Red");
+                props.setColor("GOLD");
             }}> Gold </button>
             <button onClick={() => {
-                props.setColor("Red");
+                props.setColor("BLUE");
             }}> Blue </button>
             <button onClick={() => {
-                props.setColor("Red");
+                props.setColor("GREEN");
             }}> Green </button>
         </div>
     );
