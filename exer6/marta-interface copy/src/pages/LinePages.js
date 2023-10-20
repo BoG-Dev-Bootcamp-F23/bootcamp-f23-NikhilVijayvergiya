@@ -5,42 +5,48 @@ import TrainList from '../components/TrainList';
 import NavBar from '../components/NavBar';
 import { useEffect, useState } from "react";
 import LineSelector from '../components/LineSelector';
+import SideBar from '../components/SideBar';
 
 const API_URL = "http://13.59.196.129:3001/arrivals/";
 
 export default function LinesPage() {
-    const[currColor, setColor] = useState("gold");
+    const[currColor, setColor] = useState("Gold");
     const [currStation, setStation] = useState("Chamblee");
-    const [data, setData] = useState(null);
+    const [arrivalData, setArrivalData] = useState();
+    const {stationData, setStationData } = useState();
 
     useEffect(() => {
-      fetch(API_URL + currColor)
-      .then(response => response.json())
-      .then(data => setData(data))
-    },[])
+      async function getArrivalData() {
+        const res = await fetch(API_URL + "arrivals/" + currColor);
+        const sData = res.json();
+        setArrivalData(sData);
+      }
+
+      getArrivalData();
+    }, currColor)
+
+    useEffect(() => {
+      async function getArrivalData() {
+        const res = await fetch(API_URL + "stations/" + currColor);
+        const sData = res.json();
+        setStationData(sData);
+      }
+
+      getStationData();
+    }, [])
     
 
     return (
     <div id = "everything">
-      <LineSelector></LineSelector>
+      <LineSelector setColor = {setColor}/>
       <div class = "trainColorHeading">
-          {/* <img src ={martaLogo} alt = "Marta logo"/> */}
-          <h1 class = "heading" style = {{fontWeight: 'bold'}}> {currColor} </h1>
+          <h1 class = "heading" style = {{fontWeight: 'bold'}}> {currColor.toUpperCase()} </h1>
       </div>
       <div class = "MainInfo">
-        <div class = "sideBar">
-          <p style = {{ color: 'white', marginLeft: 10}}> Select Starting Station </p>
-          <ul class = "stationList">
-            <li> <button onClick={() => setStation("All Stations")}> All Stations </button> </li>
-            <li> <button onClick={() => setStation("Chamblee")}> Chamblee </button> </li>
-            <li> <button onClick={() => setStation("Brookhaven")}> Brookhaven </button> </li>
-            <li> <button onClick={() => setStation("North Avenue")}> North Avenue </button> </li>
-            <li> <button onClick={() => setStation("Airport")}>Airport</button></li>
-          </ul>
-        </div>
+        <SideBar stationData = {stationData}/>
         <div class = "rightSide">
           <NavBar class = "navBar" color={currColor} data={stationData} />
-          <TrainList id = "LIST" color = {currColor} station = {currStation} />
+          <TrainList id = "LIST" color = { currColor } arrivalData = {arrivalData} />
         </div>
       </div>
     </div>

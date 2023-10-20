@@ -1,16 +1,21 @@
 import React from "react"
-export default function LineSelector() {
+export default function LineSelector(props) {
     
 
     return (
-
         <div class = "colorLine">
-            <button> Red </button>
-            <button> Gold </button>
-            <button> Blue </button>
-            <button> Green </button>
-
+            <button onClick={() => {
+                props.setColor("Red");
+            }}> Red </button>
+            <button onClick={() => {
+                props.setColor("Red");
+            }}> Gold </button>
+            <button onClick={() => {
+                props.setColor("Red");
+            }}> Blue </button>
+            <button onClick={() => {
+                props.setColor("Red");
+            }}> Green </button>
         </div>
-    )
-
+    );
 }
