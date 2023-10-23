@@ -2,23 +2,28 @@ import React from "react";
 import Train from "./Train";
 
 export default function NavBar(props) {
-    const { color } = props;
+    console.log(props.direction);
 
     return (
-        <li class = "buttonList">
-            <ul>
-            <button> Arriving </button>
-            </ul>
-            <ul>
-            <button> Scheduled </button>
-            </ul>
-            <ul>
-            <button> Northbound </button>
-            </ul>
-            <ul>
-            <button> Southbound </button>
-            </ul>
-        </li>
+        <ul class = "buttonList">
+            <li> <button> Arriving </button> </li>
+            <li>  <button> Scheduled </button> </li>
+            <>
+            {
+                (props.direction) ? (
+                    <React.Fragment>
+                        <li><button onClick={props.setHeadDirection("E")}>Eastbound</button></li>
+                        <li><button onClick={props.setHeadDirection("W")}>Westbound</button></li>
+                    </React.Fragment>
+                ) : (
+                    <React.Fragment>
+                        <li><button onClick={props.setHeadDirection("N")}>Northbound</button></li>
+                        <li><button onClick={props.setHeadDirection("S")}>Southbound</button></li>
+                    </React.Fragment>
+                )
+                }
+            </>
+        </ul>
     );
     
 

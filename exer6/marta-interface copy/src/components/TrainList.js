@@ -1,20 +1,34 @@
 import Train from './Train';
 
 export default function TrainList(props) {
-    const { currColor, arrivalData, currStation } = props;
-    console.log(currStation);
+    const { loading, arrivalData } = props;
+    console.log(arrivalData);
 
-    const filteredArrivals = arrivalData?.filter((arrival) => {
-        return arrival.LINE  === currColor;
-    });
+    // const filteredArrivals = arrivalData?.filter((arrival) => {
+    //     return arrival.LINE  === currColor;
+    // });
 
     return (
+        <>
         
-        <div id = "listTrains">
-            {filteredArrivals?.map((arrival) => (
-                <Train {...arrival} station = {currStation} />
-            ))}
-        </div>
+        {
+            loading ? (
+                <div className="loader-container">
+                 <div className="loader"/>
+                </div>
+            ) : !arrivalData? (
+                <div id="noData">No Trains Available</div>
+            ) : (
+                <div id="listTrains">
+                {arrivalData.map((arrival) => (
+                    <Train {...arrival} />
+                ))}
+                </div>
+            )
+            }
+
+        </>
+
     );
     
 }

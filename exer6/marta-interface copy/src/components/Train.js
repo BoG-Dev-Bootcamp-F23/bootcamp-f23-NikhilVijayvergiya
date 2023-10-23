@@ -5,7 +5,7 @@ import marta from "../Marta.png";
 
 
 export default function Train(props) {
-    const  {DESTINATION, LINE,  DELAY, WAITING_TIME, station } = props;
+    const  { DESTINATION, LINE,  DELAY, WAITING_TIME, STATION } = props;
     const [onTime, setOnTime] = useState("On Time");
     const [soon, setSoon] = useState( 'Green' );
     
@@ -31,7 +31,7 @@ export default function Train(props) {
             <img id = "martaIMG" src = {marta} alt = "marta"/>
             <div class = "trainInfo">
                 <div class = "startdest">
-                    <p id = "trainStops"> {station.toLowerCase()}  </p>
+                    <p id = "trainStops"> {STATION.toLowerCase()}  </p>
                     <img src = {arrow} alt = 'arrow' class = "arrow"/>
                     <p id = "destination"> {DESTINATION.toLowerCase()} </p>
                 </div>
