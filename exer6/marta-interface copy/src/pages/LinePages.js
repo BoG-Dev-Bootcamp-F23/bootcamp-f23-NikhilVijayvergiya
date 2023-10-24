@@ -12,12 +12,21 @@ export default function LinesPage() {
     const[currColor, setColor] = useState("GOLD");
     const [currStation, setCurrStation] = useState();
     const [arrivalData, setArrivalData] = useState();
-    const [stationData, setStationData ] = useState();
+    const [stationData, setStationData] = useState();
     const[direction, setDirection] = useState(false);
     const isInitialRender = useRef(true);
-    const [headDirection, setHeadDirection] = useState();
+    const [arriving, setArriving] = useState(false);
+    const [scheduled, setScheduled] = useState(false);
+    const [eastbound, setEastbound] = useState(false);
+    const [westbound, setWestbound] = useState(false);
+    const [northbound, setNorthbound] = useState(false);
+    const [southbound, setSoutbound] = useState(false);
+    // const [headDirection, setHeadDirection] = useState();
+    // const [arrivalTime, setArrivalTime] = useState();
 
     console.log(currStation);
+
+
 
     
     async function fetchArrivalData() {
@@ -28,7 +37,15 @@ export default function LinesPage() {
   }
 
   useEffect(() => {
+    // setArrivalTime();
     setCurrStation(null);
+    setArriving(false);
+    setScheduled(false);
+    setEastbound(false);
+    setSoutbound(false);
+    setNorthbound(false);
+    setWestbound(false);
+
     getArrivalStationData();
   }, [currColor]);
 
@@ -42,17 +59,31 @@ export default function LinesPage() {
             setArrivalData(stationData2);
             setLoading(false);
           }
+          // } else if (!currStation) {
+          //   const stationData2 = newArrivalData?.filter((arrival) => arrival.DIRECTION === headDirection);
+          //   setArrivalData(stationData2);
+          //   setLoading(false);
+          // } else {
+          //   const stationData2 = newArrivalData?.filter((arrival) =>  {
+          //     return arrival.STATION === currStation + " STATION" && arrival.DIRECTION === headDirection;
+          //   })
+          //   setArrivalData(stationData2);
+          //   setLoading(false);
+          // }
   }
 
   useEffect(() => {
+    // setArrivalTime();
     if (isInitialRender.current) {
       isInitialRender.current = false;
       return;
     }
       getArrivalStationData();
-  }, [currStation]);
+  }, [currStation, scheduled, arriving, westbound, northbound, southbound, eastbound]);
 
   useEffect(() => {
+    // setArrivalTime();
+    // setHeadDirection();
       if (currColor === "GREEN" || currColor === "BLUE") {
           setDirection(true);
       } else {
@@ -69,6 +100,21 @@ export default function LinesPage() {
 
   }, [currColor]);
 
+  const handleFilterChange = (filter, filterValue) => {
+    if (filter === "arriving") {
+      setArriving(filterValue);
+    } else if (filter === "scheduled") {
+      setScheduled(filterValue);
+    } else if (filter === "eastbound") {
+      setEastbound(filterValue);
+    } else if (filter === "westbound") {
+      setWestbound(filterValue);
+    } else if (filter === "southbound") {
+      setSoutbound(filterValue);
+    } else if (filter === "northbound") {
+      setNorthbound(filterValue);
+    }
+  };
 
     return (
     <div id = "everything">
@@ -79,8 +125,21 @@ export default function LinesPage() {
       <div class = "MainInfo">
         <SideBar stationData = {stationData} setCurrStation = {setCurrStation} />
         <div class = "rightSide">
-          <NavBar class = "navBar" direction = {direction} setHeadDirection = {setHeadDirection}/>
-          <TrainList id = "LIST" loading = { loading } currColor = { currColor } arrivalData = { arrivalData }/>
+          <NavBar class = "navBar" direction = {direction} onChangeFilter = {handleFilterChange}
+          scheduled = {scheduled}
+          arriving = {arriving}
+          northbound = {northbound}
+          southbound = {southbound}
+          westbound = {westbound}
+          eastbound = {eastbound}
+          />
+          <TrainList id = "LIST" loading = { loading } currColor = { currColor } arrivalData = { arrivalData }
+          scheduled = {scheduled}
+          arriving = {arriving}
+          northbound = {northbound}
+          southbound = {southbound}
+          westbound = {westbound}
+          eastbound = {eastbound}/>
         </div>
       </div>
     </div>

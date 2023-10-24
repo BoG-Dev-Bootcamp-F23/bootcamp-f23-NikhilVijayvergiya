@@ -52,18 +52,17 @@
   background-color: white;
 }
 
-.buttonList button:hover {
+#northbound:hover {
   background-color: rgb(44, 44, 44);
   color: white;
 }
 
-.buttonList button:active {
+#northbound:active {
   background-color: rgb(44, 44, 44);
   color: white;
 }
 
-
-.buttonList button:focus {
+#northbound:focus {
   background-color: rgb(44, 44, 44);
   color: white;
 }

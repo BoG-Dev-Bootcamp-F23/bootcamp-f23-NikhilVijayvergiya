@@ -7,8 +7,7 @@ import marta from "../Marta.png";
 export default function Train(props) {
     const  { DESTINATION, LINE,  DELAY, WAITING_TIME, STATION } = props;
     const [onTime, setOnTime] = useState("On Time");
-    const [soon, setSoon] = useState( 'Green' );
-    
+    const [soon, setSoon] = useState( 'Green' );    
     const checkOnTime = () => {
         if (DELAY === 'T0S') {
             setOnTime('Delayed');
@@ -22,8 +21,6 @@ export default function Train(props) {
     useEffect(() => {
      checkOnTime()
     }, [])
-
- 
 
     return (
         <div class = "horizontalMain">
