@@ -58,3 +58,6 @@ As a bonus, once the rest of the code displays successfully, we recommend incorp
 
 <img width="500" alt="Screenshot 2023-10-16 at 10 08 13 PM" src="https://github.com/zinichakraborty/bootcampexercises-f23/assets/113480497/ab39f0c9-83d8-4232-90da-d026aca7ef7e">
 
+
+VIDEO DEMO LINK: https://youtu.be/MHutAJDsaFM
+
