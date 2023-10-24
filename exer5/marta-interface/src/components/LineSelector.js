@@ -8,7 +8,7 @@ export default function LineSelector() {
             <button> Red </button>
             <button> Gold </button>
             <button> Blue </button>
-            <button> Gree </button>
+            <button> Green </button>
 
         </div>
     )
