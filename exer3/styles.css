@@ -1,0 +1,127 @@
+body {
+    margin: 0px;
+    background-color: #877aa8;
+ }
+
+
+.topbar {
+    background-color: #7a84a8;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+
+
+}
+
+.Rankings-Heading {
+
+    display: inline;
+    font-family: Trebuchet MS, sans-serif;
+    padding-left: 60px;
+}
+
+ol {
+    display: flex;
+    flex-direction: column; /* Display items vertically */
+    max-height: 100vh; /* Set a maximum height for the container */
+    overflow-y: auto; /* Add vertical scroll when content overflows */
+    padding-left: 0; /* Remove default padding on the list */
+    margin: 50px; /* Remove any margin */
+}
+
+ol li {
+    margin-top: 10px;
+}
+
+
+
+.Rankings {
+    all: inherit
+    /* border: none;
+    background-color: #7a84a8;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+}
+
+
+.label {
+    margin-left: 20px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+
+}
+.movie-columns {
+    display: flex;
+    flex-direction: row;
+    background-color: gray;
+    border: 1px solid gray;
+    border-radius: 5%;
+
+}
+
+.movie-columns img {
+    align-items: center;
+    margin-left: 10%;
+}
+
+.movie-columns h1 {
+    text-align: center;
+    margin-left: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.movie-columns p {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5%;
+    border: black;
+    font-family: Roboto,Helvetica,Arial,sans-serif ;
+}
+
+
+
+li {
+    margin-right: 20%;
+    display: inline-block;
+
+}
+li:hover, .label:hover {
+    transition: ease 200ms;
+    color: darkblue;
+}
+
+.searchText {
+    display: inline;
+    text-align: center;
+    /* padding: 20%; */
+    font-family: Trebuchet MS, sans-serif;
+}
+
+
+.movieSearch {
+    display: block;
+    margin: 0px;
+    text-align: center;
+    height: 80%;
+    padding-top: 5%;
+    padding-bottom: 50%;
+
+}
+
+input {
+    text-align: left;
+    padding-left: 5px;
+    border-radius: 15px;
+    width: 400px;
+    height: 30px;
+    position: sticky;
+    background-color: lightgray;
+
+}

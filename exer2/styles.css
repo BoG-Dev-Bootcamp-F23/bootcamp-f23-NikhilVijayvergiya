@@ -1,0 +1,154 @@
+     body {
+        margin: 0;
+        background: darkslategrey;
+        font-family: 'Century Gothic', 'AppleGothic', sans-serif;
+    }
+
+    .container {
+        width: auto;
+        margin: 0 auto;
+        color: aliceblue;
+        display: grid;
+        align-items: center;
+        text-align: center;
+    }
+
+    header {
+        background: #747f8a;
+    }
+
+    nav {
+        width: 100%;
+        height: 60px;
+        /* display: grid;
+        align-items: center; */
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+
+
+    .profilePhoto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: auto;
+     }
+
+    .profilePhoto img {
+        width: 100%;
+        height: auto;
+    }
+
+    .infoList ul {
+        display: flex;
+        list-style: none;
+        padding: 50px;
+    }
+    
+    .infoList li {
+        margin: auto;
+    }
+
+    #showMajor, #showHometown, #showYear, #showFood {
+        background-color: #747f8a;
+        color: rgb(0, 0, 0);
+        box-shadow: 2px 5px 10px 1px;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        width: 200px;
+        left: auto;
+        border: none;
+        border-radius: 0px; /* Rounded corners */
+        cursor: pointer;
+        font-size: 16px;
+        font-family:'Century Gothic', 'AppleGothic', sans-serif;
+    } 
+
+    .Major-drop-in {
+        position: absolute;
+        top: -100%; /* Start offscreen at the top */
+        width: 200px;
+        background-color: rgb(24, 19, 49);
+        transition: top 0.8s ease-in-out;
+        text-align: center;
+        color: white;
+    }
+
+    .Year-drop-in {
+        position: absolute;
+        top: -100%; /* Start offscreen at the top */
+        width: 200px;
+        background-color: rgb(24, 19, 49);
+        transition: top 0.8s ease-in-out;
+        text-align: center;
+        color: white;
+    }
+
+    .Hometown-drop-in {
+        position: absolute;
+        top: -100%; /* Start offscreen at the top */
+        width: 200px;
+        background-color: rgb(24, 19, 49);
+        transition: top 0.8s ease-in-out;
+        text-align: center;
+        color: white;
+    }
+
+    .Food-drop-in {
+        position: absolute;
+        top: -100%; /* Start offscreen at the top */
+        width: 200px;
+        background-color: rgb(24, 19, 49);
+        transition: top 0.8s ease-in-out;
+        text-align: center;
+        color: white;
+    }
+
+
+    .PassionDescription {
+        position: absolute;
+        background-color: rgb(24, 19, 49);
+        color: white;
+        width: 275px;
+        height: 150px;
+        text-align: center;
+        padding-left: 5px;
+        padding-top: 15px; 
+        padding-right: 5px;
+    }
+
+    #showPassion {
+        position: absolute;
+        left: 50%; /* Position at 50% from the left */
+        transform: translate(-50%); /* Center the button */
+        background-color: #747f8a;
+        color: black;
+        width: 200px;
+        height: 165px;
+        text-align: center;
+        padding: 10px;
+        font-family: 'Century Gothic', 'AppleGothic', sans-serif;
+        box-shadow: 2px 5px 10px 1px;
+
+    }
+
+    #PassionDescription1 {
+        transition: left 0.8s ease-in-out;
+        left: -100%;
+        font-size: smaller;
+    }
+
+    #PassionDescription2 {
+        transition: left 0.8s ease-in-out;
+        left: 100%; 
+        font-size: smaller;
+        
+    } 
+    .description {
+        text-align: center;
+        color: white;
+    }

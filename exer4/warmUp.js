@@ -17,6 +17,21 @@
  */
 function toLetterGrade(numGrade) {
   // TODO
+  if (numGrade < 0) {
+    return "INVALID";
+  } else if (numGrade < 60) {
+    return "F";
+  } else if (numGrade < 70) {
+    return "D";
+  } else if (numGrade < 80) {
+    return "C";
+  } else if (numGrade < 90) {
+    return "B";
+  } else if (numGrade <= 100) {
+    return "A";
+  } else {
+    return "INVALID";
+  }
 }
 
 /**
@@ -27,6 +42,8 @@ function toLetterGrade(numGrade) {
  * Example: [9, 3, 4, 1, 2, 0] --> [4, 2, 0]
  */
 function getEvenElements(array) {
+  let result = array.filter(curr => (curr % 2 == 0));
+  return result;
   // TODO
 }
 
@@ -40,6 +57,15 @@ function getEvenElements(array) {
  * Example: "I love Bits of Good" --> 4
  */
 function findLongestWord(string) {
+  const arr = string.split(" ");
+  let length = 0;
+  arr.forEach(curr => {
+    if (curr.length > length) {
+      length = curr.length;
+    }
+  })
+  return length;
+
   // TODO
 }
 
@@ -65,6 +91,26 @@ function findLongestWord(string) {
     } 
  */
 function combineObjects(object1, object2) {
+
+  // let arr = {};
+  // for (let key in object1) {
+  //   arr[key] = object1[key];
+  // }
+
+  // for (let key in object2) {
+  //   arr[key] = object2[key];
+  // }
+
+  // return arr;
+
+  const combined = {
+    ... object1,
+    ... object2
+  };
+  return combined;
+  
+
+  // console.log(arr);
   // TODO
 }
 
@@ -77,6 +123,11 @@ function combineObjects(object1, object2) {
  *  Example: [1, 2, 3] -> [3, 2, 1]
  */
 function reverseArr(array) {
+  let arr = [];
+  for (var key = array.length - 1; key >= 0; key--) {
+    arr.push(array[key]);
+  }
+  return arr;
   // TODO
 }
 
