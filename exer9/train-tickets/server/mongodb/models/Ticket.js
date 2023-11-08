@@ -28,15 +28,6 @@ const ticketSchema = new mongoose.Schema({
 
 })
 
-
-
-
-
-
-
-
-
-
-export default mongoose.models?.Name || mongoose.model("Name", schemaName)
+export default mongoose.models?.Name || mongoose.model("Ticket", ticketSchema)
 
 
