@@ -3,14 +3,14 @@ import mongoose from "mongoose"
 
 const userSchema = new mongoose.Schema({
 
-    Name: {
+    name: {
         type: String,
         required: true
     }, 
-    Age: {
-        type: int
+    age: {
+        type: Number
     }
-})
+});
 
 
 export default mongoose.models?.User || mongoose.model("User", userSchema)

@@ -1,7 +1,5 @@
+import { ObjectId } from "mongodb";
 import mongoose from "mongoose"
-
-
-
 
 const ticketSchema = new mongoose.Schema({
 
@@ -9,25 +7,16 @@ const ticketSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    Station: {
-
+    station: {
         type: String,
         required: true
-
-
     },
     userId: {
-        type: String,
+        type: ObjectId,
         required: true
     }
 
+});
 
-
-
-
-
-})
-
-export default mongoose.models?.Name || mongoose.model("Ticket", ticketSchema)
-
+export default mongoose.models?.Ticket || mongoose.model("Ticket", ticketSchema)
 
