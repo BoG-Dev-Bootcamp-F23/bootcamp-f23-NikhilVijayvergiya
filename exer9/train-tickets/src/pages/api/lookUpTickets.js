@@ -6,14 +6,17 @@ import readTicketsByUser from "../../../server/mongodb/actions/readTicketsByUser
 export default async function handler (req, res) {
     if (req.method === "GET") {
         try {
-            await readTicketsByUser(req.query);
+            const userTickets = await readTicketsByUser(req.query);
+            return res.status(200).send(userTickets);
         } catch(e) {
-            if (e.message === "Ticket not found") {
+            if (e.message === "User not found") {
                 return res.status(400).send("Ticket not found. Invalid User ID");
+            } else if (e.message === "Ticket not found") {
+                return res.status(400).send("Ticket not found. No Tickets for that user");
             } else {
                 return res.status(500).send("Failed retrieving ticket");
             }
         }
-        return res.status(200).send("Successfully found ticket");
+        
     }
 }
